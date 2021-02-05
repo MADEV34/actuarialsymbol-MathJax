@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+.inline {
+  background-color: #f7f7f7;
+  border:solid 1px #B0B0B0;
+}
+.error {
+	font-weight: bold;
+	color: #FF0000;
+}
+.warning {
+	font-weight: bold;
+}
+.message {
+	font-style: italic;
+}
+.source, .output, .warning, .error, .message {
+	padding: 0 1em;
+  border:solid 1px #F7F7F7;
+}
+.source {
+  background-color: #f5f5f5;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+.hl.num {
+  color: #AF0F91;
+}
+.hl.str {
+  color: #317ECC;
+}
+.hl.com {
+  color: #AD95AF;
+  font-style: italic;
+}
+.hl.opt {
+  color: #000000;
+}
+.hl.std {
+  color: #585858;
+}
+.hl.kwa {
+  color: #295F94;
+  font-weight: bold;
+}
+.hl.kwb {
+  color: #B05A65;
+}
+.hl.kwc {
+  color: #55aa55;
+}
+.hl.kwd {
+  color: #BC5A65;
+  font-weight: bold;
+}
+</style>
+	<meta charset="utf-8"/>
+<script type="text/javascript"
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full">
+</script>
+	<title>Test de Macro - Actuarial Symbols </title>
+</head>
+<body>
+
+<script type="text/x-mathjax-config">
+
+MathJax.Hub.Config({
+    TeX: {  
+        Macros: {
+            endowxn: ["{\\require{enclose} {x:\\enclose{actuarial}{n}}}"],
+            angln: ["{\\require{enclose} \\enclose{actuarial}{n}}"],
+            Ax: [ "{A_{#1}}", 1 ],
+            bAx: [ "{\\bar{A}_{#1}}", 1 ],
+            dAx: [ "{{\\ddot A}_{#1}}", 1 ],
+            ax: [ "{a_{#1}}", 1 ],
+            bax: [ "{\\bar{a}_{#1}}", 1 ],
+            dax: [ "{{\\ddot a}_{#1}}", 1 ],
+            ddx: ['\\frac{d#2}{d#1}', 2, 'x'],
+            actsymb : ["{_{#1}^{#2}{#3}_{#4}^{#5}}", 5],
+            
+        }
+    }
+});
+</script>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+
+<thead>
+<tr>
+	<th>Actuarial Symbol</th>
+	<th>Code</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+	<td><span class="math">\(\endowxn\)</span></td>
+	<td><code>\endowxn</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(\angln\)</span></td>
+	<td><code>\angln</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(\Ax{\endowxn}\)</span></td>
+	<td><code>\Ax{\endowxn}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(\bAx{\endowxn}\)</span></td>
+	<td><code>\bAx{\endowxn}</code></td>
+</tr>
+<tr>
+
+<tr>
+	<td><span class="math">\(\dAx{\endowxn}\)</span></td>
+	<td><code>\dAx{\endowxn}</code></td>
+</tr>
+<tr>
+
+<tr>
+	<td><span class="math">\(\ax{\endowxn}\)</span></td>
+	<td><code>\ax{\endowxn}</code></td>
+</tr>
+<tr>
+
+<tr>
+	<td><span class="math">\(\bax{\endowxn}\)</span></td>
+	<td><code>\bax{\endowxn}</code></td>
+</tr>
+<tr>
+
+<tr>
+	<td><span class="math">\(\dax{\endowxn}\)</span></td>
+	<td><code>\dax{\endowxn}</code></td>
+</tr>
+<tr>
+
+<tr>
+	<td><span class="math">\( \actsymb{}{}{A}{\endowxn}{} \)</span></td>
+	<td><code>\actsymb{}{}{A}{\endowxn}{}</code></td>
+</tr>
+<tr>
+
+<tr>
+	<td><span class="math">\( \actsymb{}{}{A}{x}{} \)</span></td>
+	<td><code>\actsymb{}{}{A}{x}{}</code></td>
+</tr>
+<tr>
+
+<tr>
+	<td><span class="math">\( \actsymb{}{2}{A}{x}{(m)} \)</span></td>
+	<td><code>\actsymb{}{}{A}{x}{}</code></td>
+</tr>
+<tr>
+
+
+<tr>
+	<td><span class="math">\( \actsymb{n|}{2}{A}{\endowxn}{(m)} \)</span></td>
+	<td><code>\actsymb{n|}{2}{A}{\endowxn}{(m)}</code></td>
+</tr>
+<tr>
+
+<tr>
+	<td><span class="math">\( \actsymb{}{}{I\dax{x}}{}{(m)} \)</span></td>
+	<td><code>\actsymb{}{}{I\dax{x}}{}{(m)}</code></td>
+</tr>
+<tr>
+
+
+</tbody>
+</table>
+
+</body>
+</html>
