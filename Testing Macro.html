@@ -76,17 +76,90 @@ src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full
 MathJax.Hub.Config({
     TeX: {  
         Macros: {
+            
+            endow: ["{\\require{enclose} {{#1}:\\enclose{actuarial}{#2}}}", 2],
             endowxn: ["{\\require{enclose} {x:\\enclose{actuarial}{n}}}"],
+            
+            pureendow: ["{\\require{enclose} {{#1}:\\overset{1}{\\enclose{actuarial}{#2}}}}", 2],
+            pureendowxn: ["{\\require{enclose} {x:\\overset{1}{\\enclose{actuarial}{n}}}}"],
+            
+            term : ["{\\require{enclose} {\\overset{1}{#1}:\\enclose{actuarial}{#2}}}", 2],
+            termxn : ["{\\require{enclose} {\\overset{1}{x}:\\enclose{actuarial}{n}}}"],
+            
+            angl: ["{\\require{enclose} \\enclose{actuarial}{#1}}", 1],
             angln: ["{\\require{enclose} \\enclose{actuarial}{n}}"],
-            Ax: [ "{A_{#1}}", 1 ],
-            bAx: [ "{\\bar{A}_{#1}}", 1 ],
-            dAx: [ "{{\\ddot A}_{#1}}", 1 ],
-            ax: [ "{a_{#1}}", 1 ],
-            bax: [ "{\\bar{a}_{#1}}", 1 ],
-            dax: [ "{{\\ddot a}_{#1}}", 1 ],
-            ddx: ['\\frac{d#2}{d#1}', 2, 'x'],
+            
+            nthtop : ["\\overset{#1}{#2}", 2],
+            
+            joint : ["\\overline{#1}", 1],
+
+            itop : ["\\overset{1}{#1}", 1],
+            iitop : ["\\overset{2}{#1}", 1],
+            iiitop : ["\\overset{3}{#1}", 1],
+            
+            ibottom : ["\\underset{1}{#1}", 1],
+            iibottom : ["\\underset{2}{#1}", 1],
+            iiibottom : ["\\underset{3}{#1}", 1],
+            
+            
+            Ax: [ "{A^{#1}_{#2}}", 2, ""],
+            bAx: [ "{\\bar{A}^{#1}_{#2}}", 2, ""],
+            dAx: [ "{{\\ddot A}^{#1}_{#2}}", 2, ""],
+            tAx: [ "{{\\tilde A}^{#1}_{#2}}", 2, ""],
+            
+            ax: [ "{a^{#1}_{#2}}", 2, ""],
+            bax: [ "{\\bar{a}^{#1}_{#2}}", 2, ""],
+            dax: [ "{\\ddot{a}^{#1}_{#2}}", 2, ""],
+            tax: [ "{\\tilde{a}^{#1}_{#2}}", 2, ""],
+            
+            Aringx: [ "{\\mathring{A}^{#1}_{#2}}", 2, ""],
+            aringx: [ "{\\mathring{a}^{#1}_{#2}}", 2, ""],
+            Eringx: [ "{\\mathring{E}^{#1}_{#2}}", 2, ""],
+            eringx: [ "{\\mathring{e}^{#1}_{#2}}", 2, ""],
+            
+            dx : [ "{d^{#1}_{#2}}", 2, ""],
+            DA : [ "(DA)"],
+            DbA : [ "(D\\bar A)"],
+            Dx : ["{\\mathscr{D}^{#1}_{#2}}", 2, ""],
+            
+            Ex : ["{E^{#1}_{#2}}", 2, ""],
+            
+            IA : [ "(IA)"],
+            IbA : [ "(I\\bar A)"],
+            bIbA : [ "(\\bar I\\bar A)"],
+            ImA : [ "(I^{(m)}A)"],
+            ImbA : [ "(I^{(m)}\\bar A)"],
+            IbmbA : [ "(\\bar I^{(m)}\\bar A)"],
+            
+            lx : [ "{\\ell^{#1}_{#2}}", 2, ""],
+            Lx : ["{\\mathscr{L}^{#1}_{#2}}", 2, ""],
+            
+            px : [ "{p^{#1}_{#2}}", 2, ""],
+            Px : [ "{p^{#1}_{#2}}", 2, ""],
+            
+            premium : [ "{P^{#1}\ ({#2})}", 2, ""],
+            bpremium : [ "{\\bar{P}^{#1}({#2})}", 2, ""],
+            tpremium : [ "{\\tilde{P}^{#1}({#2})}", 2, ""],
+
+            reserve : [ "{V^{#1}\ ({#2})}", 2, ""],
+            breserve : [ "{\\bar{V}^{#1}({#2})}", 2, ""],
+
+            qx : [ "{q^{#1}_{#2}}", 2, ""],
+
+            sx: [ "{s^{#1}_{#2}}", 2, ""],
+            bsx: [ "{\\bar{s}^{#1}_{#2}}", 2, ""],
+            dsx: [ "{\\ddot{s}^{#1}_{#2}}", 2, ""],
+
+            Vx : [ "{V^{#1}_{#2}}", 2, ""],
+
+
+            Wx : [ "{W^{#1}_{#2}}", 2, ""],
+
             actsymb : ["{_{#1}^{#2}{#3}_{#4}^{#5}}", 5],
             
+
+            
+
         }
     }
 });
@@ -107,80 +180,1133 @@ MathJax.Hub.Config({
 <tbody>
 
 <tr>
-	<td><span class="math">\(\endowxn\)</span></td>
-	<td><code>\endowxn</code></td>
+	<td><span class="math">\( a \)</span></td>
+	<td><code>a</code></td>
 </tr>
 
 <tr>
-	<td><span class="math">\(\angln\)</span></td>
-	<td><code>\angln</code></td>
+	<td><span class="math">\( a(x) \)</span></td>
+	<td><code>a(x)</code></td>
 </tr>
 
 <tr>
-	<td><span class="math">\(\Ax{\endowxn}\)</span></td>
+	<td><span class="math">\( a_x \)</span></td>
+	<td><code>a_x</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \ax{\angl{K}} \)</span></td>
+	<td><code>\ax{\angl{K}}</code></td>
+</tr>
+
+
+<tr>
+	<td><span class="math">\( \bax{P_t} \)</span></td>
+	<td><code>\bax{P_t}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \bax{\angl{T}} \)</span></td>
+	<td><code>\bax{\angl{T}}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \bax{x} \)</span></td>
+	<td><code>\bax{x}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \bax[h]{r} \)</span></td>
+	<td><code>\bax[h]{r}</code></td>
+</tr>
+
+
+<tr>
+	<td><span class="math">\( \bax[i]{x+t} \)</span></td>
+	<td><code>\bax[i]{x+t}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \bax[r]{x+t} \)</span></td>
+	<td><code>\bax[r]{x+t}</code></td>
+</tr>
+
+
+<tr>
+	<td><span class="math">\( \dax{\angl{K+1}} \)</span></td>
+	<td><code>\dax{\angl{K+1}}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \dax[(m)]{x} \)</span></td>
+	<td><code>\dax[(m)]{x}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \aringx[(m)]{x} \)</span></td>
+	<td><code>\aringx[(m)]{x}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \dax[\{m\}]{x} \)</span></td>
+	<td><code>\dax[\{m\}]{x}</code></td>
+</tr>
+
+
+<tr>
+	<td><span class="math">\( _j\dax{x} \)</span></td>
+	<td><code>_j\dax{x}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( _*\dax{x} \)</span></td>
+	<td><code>_*\dax{x}</code></td>
+</tr>
+
+
+<tr>
+	<td><span class="math">\( \ax{\endowxn} \)</span></td>
+	<td><code>\ax{\endowxn}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \bax{\endowxn} \)</span></td>
+	<td><code>\bax{\endowxn}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \dax{\endowxn} \)</span></td>
+	<td><code>\dax{\endowxn}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \dax[(m)]{\endowxn} \)</span></td>
+	<td><code>\dax[(m)]{\endowxn}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \aringx[(m)]{\endowxn} \)</span></td>
+	<td><code>\aringx[(m)]{\endowxn}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \dax[\{m\}]{\endowxn} \)</span></td>
+	<td><code>\dax[\{m\}]{\endowxn}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \bax{\joint\endowxn} \)</span></td>
+	<td><code>\bax{\joint\endowxn}</code></td>
+</tr>
+
+
+<tr>
+	<td><span class="math">\( ^2\bax{\endowxn} \)</span></td>
+	<td><code>^2\bax{\endowxn}</code></td>
+</tr>
+
+
+<tr>
+	<td><span class="math">\( _{n|}\ax{x} \)</span></td>
+	<td><code>_{n|}\ax{x}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( _{n|}\bax{x} \)</span></td>
+	<td><code>_{n|}\bax{x}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( _{n|}\dax{x} \)</span></td>
+	<td><code>_{n|}\dax{x}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( _{n|}\dax[(m)]{x} \)</span></td>
+	<td><code>_{n|}\dax[(m)]{x}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \bax[1]{xy|z} \)</span></td>
+	<td><code>\bax[1]{xy|z}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \dax[(m)]{xy} \)</span></td>
+	<td><code>\dax[(m)]{xy}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \dax{xy:\angln} \)</span></td>
+	<td><code>\dax{xy:\angln}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( ^2\dax{xy:\angln} \)</span></td>
+	<td><code>^2\dax{xy:\angln}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \bax{x|y} \)</span></td>
+	<td><code>\bax{x|y}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \bax{\joint{x_1 x_2 x_3}} \)</span></td>
+	<td><code>\bax{\joint{x_1 x_2 x_3}}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( (aA)(x) \)</span></td>
+	<td><code>(aA)(x)</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( (aA)_t \)</span></td>
+	<td><code>(aA)_t</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( (aC)_t \)</span></td>
+	<td><code>(aC)_t</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( (aF)_t \)</span></td>
+	<td><code>(aF)_t</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( (aU)_t \)</span></td>
+	<td><code>(aU)_t</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( (aV)(x) \)</span></td>
+	<td><code>(aV)(x)</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( (aV)_t \)</span></td>
+	<td><code>(aV)_t</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( A(h) \)</span></td>
+	<td><code>A(h)</code></td>
+</tr>
+
+
+<tr>
+	<td><span class="math">\( A_t \)</span></td>
+	<td><code>A_t</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \Ax{x} \)</span></td>
+	<td><code>\Ax{x}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \bAx{x} \)</span></td>
+	<td><code>\bAx{x}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \Ax[(m)]{x} \)</span></td>
+	<td><code>\Ax[(m)]{x}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \bAx[\text{PR}]{x} \)</span></td>
+	<td><code>\bAx[\text{PR}]{x}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \Ax{\termxn} \)</span></td>
+	<td><code>\Ax{\termxn}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \Ax{\endowxn} \)</span></td>
 	<td><code>\Ax{\endowxn}</code></td>
 </tr>
 
 <tr>
-	<td><span class="math">\(\bAx{\endowxn}\)</span></td>
+	<td><span class="math">\( \bAx{\endowxn} \)</span></td>
 	<td><code>\bAx{\endowxn}</code></td>
 </tr>
-<tr>
 
 <tr>
-	<td><span class="math">\(\dAx{\endowxn}\)</span></td>
-	<td><code>\dAx{\endowxn}</code></td>
+	<td><span class="math">\( \Ax{\pureendowxn} \)</span></td>
+	<td><code>\Ax{\pureendowxn}</code></td>
 </tr>
-<tr>
 
 <tr>
-	<td><span class="math">\(\ax{\endowxn}\)</span></td>
-	<td><code>\ax{\endowxn}</code></td>
+	<td><span class="math">\( _j\Ax{x} \)</span></td>
+	<td><code>_j\Ax{x}</code></td>
 </tr>
-<tr>
 
 <tr>
-	<td><span class="math">\(\bax{\endowxn}\)</span></td>
-	<td><code>\bax{\endowxn}</code></td>
+	<td><span class="math">\( _*\Ax{x} \)</span></td>
+	<td><code>_*\Ax{x}</code></td>
 </tr>
-<tr>
 
 <tr>
-	<td><span class="math">\(\dax{\endowxn}\)</span></td>
-	<td><code>\dax{\endowxn}</code></td>
+	<td><span class="math">\( \bAx{\termxn} \)</span></td>
+	<td><code>\bAx{\termxn}</code></td>
 </tr>
-<tr>
 
 <tr>
-	<td><span class="math">\( \actsymb{}{}{A}{\endowxn}{} \)</span></td>
-	<td><code>\actsymb{}{}{A}{\endowxn}{}</code></td>
+	<td><span class="math">\( \tAx{\termxn} \)</span></td>
+	<td><code>\tAx{\termxn}</code></td>
 </tr>
-<tr>
 
 <tr>
-	<td><span class="math">\( \actsymb{}{}{A}{x}{} \)</span></td>
-	<td><code>\actsymb{}{}{A}{x}{}</code></td>
+	<td><span class="math">\( ^2\Ax{\pureendowxn} \)</span></td>
+	<td><code>^2\Ax{\pureendowxn}</code></td>
 </tr>
-<tr>
 
 <tr>
-	<td><span class="math">\( \actsymb{}{2}{A}{x}{(m)} \)</span></td>
-	<td><code>\actsymb{}{}{A}{x}{}</code></td>
+	<td><span class="math">\( ^2\Ax{\termxn} \)</span></td>
+	<td><code>^2\Ax{\termxn}</code></td>
 </tr>
-<tr>
-
 
 <tr>
-	<td><span class="math">\( \actsymb{n|}{2}{A}{\endowxn}{(m)} \)</span></td>
-	<td><code>\actsymb{n|}{2}{A}{\endowxn}{(m)}</code></td>
+	<td><span class="math">\( _{m|}\bAx{x} \)</span></td>
+	<td><code>_{m|}\bAx{x}</code></td>
 </tr>
-<tr>
 
 <tr>
-	<td><span class="math">\( \actsymb{}{}{I\dax{x}}{}{(m)} \)</span></td>
-	<td><code>\actsymb{}{}{I\dax{x}}{}{(m)}</code></td>
+	<td><span class="math">\( _{m|n}\bAx{x} \)</span></td>
+	<td><code>_{m|n}\bAx{x}</code></td>
 </tr>
+
 <tr>
+	<td><span class="math">\( \Ax{xy} \)</span></td>
+	<td><code>\Ax{xy}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \Ax{\joint{xy}} \)</span></td>
+	<td><code>\Ax{\joint{xy}}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \Ax[(m)]{xy} \)</span></td>
+	<td><code>\Ax{xy}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \bAx{x \iitop{y}} \)</span></td>
+	<td><code>\bAx{x \iitop{y}}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \bAx{\itop{x}y} \)</span></td>
+	<td><code>\bAx{x \iitop{y}}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \Ax{xy:\angln} \)</span></td>
+	<td><code>\Ax{xy:\angln}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \bAx{\itop{\joint{xy}}:\angln} \)</span></td>
+	<td><code>\bAx{\itop{\joint{xy}}:\angln}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( ^2\Ax{xy:\angln} \)</span></td>
+	<td><code>^2\Ax{xy:\angln}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \bAx{wx\iitop{y}} \)</span></td>
+	<td><code>\bAx{wx\iitop{y}}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \bAx{\joint{x_1 x_2 x_3}} \)</span></td>
+	<td><code>\bAx{\joint{x_1 x_2 x_3}}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( _kAS \)</span></td>
+	<td><code>_kAS</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( _k\widehat{AS} \)</span></td>
+	<td><code>_k\widehat{AS}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( (AS)_{x+t} \)</span></td>
+	<td><code>(AS)_{x+t}</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( (AAI) \)</span></td>
+	<td><code>(AAI)</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \beta \)</span></td>
+	<td><code>\beta</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \bar\beta \)</span></td>
+	<td><code>\bar\beta</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\( \Gamma(\alpha) \)</span></td>
+	<td><code>\Gamma(\alpha)</code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  b(u)  \)</span></td>
+	<td><code> b(u) </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  b_j  \)</span></td>
+	<td><code> b_j </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  b_t  \)</span></td>
+	<td><code> b_t </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  b_f(t)  \)</span></td>
+	<td><code> b_f(t) </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  B_t  \)</span></td>
+	<td><code> B_t </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  \hat{B}_{x+k}  \)</span></td>
+	<td><code> \hat{B}_{x + k} </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  \hat{B}_{x + t}^{(3)}  \)</span></td>
+	<td><code> \hat{B}_{x + t}^{(3)} </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  \hat{B}_{x + t}^{(j)}  \)</span></td>
+	<td><code> \hat{B}_{x + t}^{(j)} </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  _hBP  \)</span></td>
+	<td><code> _hBP </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  c  \)</span></td>
+	<td><code> c </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  c_k  \)</span></td>
+	<td><code> c_k </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  \hat{c}_k  \)</span></td>
+	<td><code> \hat{c}_k </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  c(t)  \)</span></td>
+	<td><code> c(t) </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  C_1  \)</span></td>
+	<td><code> C_1 </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  C_2  \)</span></td>
+	<td><code> C_2 </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  C_3  \)</span></td>
+	<td><code> C_3 </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  C_h  \)</span></td>
+	<td><code> C_h </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  _kCV  \)</span></td>
+	<td><code> _kCV </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  \dx[(j)]{x}  \)</span></td>
+	<td><code> \dx[(j)]{x} </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  _n\dx{x}  \)</span></td>
+	<td><code> _n\dx{x} </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  _n\dx[(j)]{x}  \)</span></td>
+	<td><code> _n\dx[(j)]{x} </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  _n\dx[(\tau)]{x}  \)</span></td>
+	<td><code> _n\dx[(\tau)]{x} </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  \actsymb{t}{}{D}{j}{}  \)</span></td>
+	<td><code> \actsymb{t}{}{D}{j}{} </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  \actsymb{k+1}{}{D}{}{}  \)</span></td>
+	<td><code> \actsymb{k+1}{}{D}{}{} </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  \DA_{\termxn}  \)</span></td>
+	<td><code> \DA_{\termxn} </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  \DbA_{\termxn}  \)</span></td>
+	<td><code> \DbA_{\termxn} </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  _n\Dx{x}  \)</span></td>
+	<td><code> _n\Dx{x} </code></td>
+</tr>
+
+<tr>
+	<td><span class="math">\(  _n\Dx[(j)]{x}  \)</span></td>
+	<td><code> _n\Dx[(j)]{x} </code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  _n\Dx[(\tau)]{x}  \)</span></td>
+	<td><code> _n\Dx[(\tau)]{x} </code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  e  \)</span></td>
+	<td><code> e </code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  e_{h - 1}  \)</span></td>
+	<td><code> e_{h - 1} </code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  e_x  \)</span></td>
+	<td><code> e_x </code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \eringx{x}  \)</span></td>
+	<td><code> \eringx{x} </code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \hat{e}_k  \)</span></td>
+	<td><code> \hat{e}_k </code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \eringx{\endowxn}  \)</span></td>
+	<td><code> \eringx{\endowxn} </code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  e_{xy}  \)</span></td>
+	<td><code> e_{xy} </code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  e_{\joint{xy}}  \)</span></td>
+	<td><code> e_{\joint{xy}} </code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \mathrm{E}  \)</span></td>
+	<td><code>\mathrm{E} </code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  E  \)</span></td>
+	<td><code>E </code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  E_0  \)</span></td>
+	<td><code>E_0 </code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  _n\Ex{x}  \)</span></td>
+	<td><code>_n\Ex{x} </code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  (ES)_{x + h + t}  \)</span></td>
+	<td><code>(ES)_{x + h + t} </code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \mathit{ELRA}  \)</span></td>
+	<td><code>\mathit{ELRA}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  f  \)</span></td>
+	<td><code>f</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  f(u,t)  \)</span></td>
+	<td><code>f(u,t)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  f_S(s)  \)</span></td>
+	<td><code>f_S(s)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  F_X(x)  \)</span></td>
+	<td><code>F_X(x)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  f_t  \)</span></td>
+	<td><code>f_t</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  F^{(k)}  \)</span></td>
+	<td><code>F^{(k)}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  F_S(s)  \)</span></td>
+	<td><code>F_S(s)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  _kF  \)</span></td>
+	<td><code>_kF</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  G  \)</span></td>
+	<td><code>G</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \hat{G}  \)</span></td>
+	<td><code>\hat{G}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  G(b)  \)</span></td>
+	<td><code>G(b)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  G(x; \alpha, \beta)  \)</span></td>
+	<td><code>G(x; \alpha, \beta)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  h(x)  \)</span></td>
+	<td><code>h(x)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  h(r)  \)</span></td>
+	<td><code>h(r)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  H(x; \alpha, \beta, x_0)  \)</span></td>
+	<td><code>H(x; \alpha, \beta, x_0)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  _u(hp)_{x + t}^{(\tau)}  \)</span></td>
+	<td><code>_u(h \mu)_{x + t}^{(\tau)}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  (hp)_{x + t}^{(j)}(u)  \)</span></td>
+	<td><code>(hp)_{x + t}^{(j)}(u)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  i’_{k + 1}  \)</span></td>
+	<td><code>i’_{k + 1}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \hat{\imath}_{k + 1}  \)</span></td>
+	<td><code>\hat{\imath}_{k + 1}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  i(s, s + t)  \)</span></td>
+	<td><code>i(s, s + t)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  I_k  \)</span></td>
+	<td><code>I_k</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  I_d  \)</span></td>
+	<td><code>I_d</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  I_d(x)  \)</span></td>
+	<td><code>I_d(x)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  _jI_k  \)</span></td>
+	<td><code>_jI_k</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \IA_x  \)</span></td>
+	<td><code>\IA_x</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \IbA_x  \)</span></td>
+	<td><code>\IbA_x</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \bIbA_x  \)</span></td>
+	<td><code>bIbA_x</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \ImbA_x  \)</span></td>
+	<td><code>ImbA_x</code></td>
+</tr>
+
+
+<tr>
+<td><span class="math">\(  \IA_{\termxn}  \)</span></td>
+	<td><code>\IA_{\termxn}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  J  \)</span></td>
+	<td><code>J</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  J  \)</span></td>
+	<td><code>J</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  j(s, s + t, s + u)  \)</span></td>
+	<td><code>j(s, s + t, s + u)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  _t{\bar{k}}{x}  \)</span></td>
+	<td><code>_t{\bar{k}}{x}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  K  \)</span></td>
+	<td><code>K</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  K(x)  \)</span></td>
+	<td><code>K(x)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  K(xy)  \)</span></td>
+	<td><code>K(xy)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  K(\joint{xy})  \)</span></td>
+	<td><code>K(\joint{xy})</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \lx{x}  \)</span></td>
+	<td><code>\lx{x}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \lx{[x] + k}  \)</span></td>
+	<td><code>\lx{x}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \lx[(\tau)]{x}  \)</span></td>
+	<td><code>\lx[(\tau)]{x}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  l(x, u)  \)</span></td>
+	<td><code>l(x, u)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  l_f(x, u)  \)</span></td>
+	<td><code>l_f(x, u)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  L  \)</span></td>
+	<td><code>L</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  L_1  \)</span></td>
+	<td><code>L_1</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  L_x  \)</span></td>
+	<td><code>L_x</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  L(h)  \)</span></td>
+	<td><code>L(h)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  _tL  \)</span></td>
+	<td><code>_tL</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  _tL^{\underline{2}}  \)</span></td>
+	<td><code>_tL^{\underline{2}}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  _tL_e  \)</span></td>
+	<td><code>_tL_e</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  _tL_e^{\underline{2}}  \)</span></td>
+	<td><code>_tL_e^{\underline{2}}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \Lx{x}  \)</span></td>
+	<td><code>\Lx{x}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \Lx[(\tau)]{x}  \)</span></td>
+	<td><code>\Lx[(\tau)]{x}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  m(x)  \)</span></td>
+	<td><code>m(x)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  m_x^{(j)}  \)</span></td>
+	<td><code>m_x^{(j)}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  m_x^{(\tau)}  \)</span></td>
+	<td><code>m_x^{(\tau)}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  m_x^{\prime (j)}  \)</span></td>
+	<td><code>m_x^{\prime (j)}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \mathrm{M}_X(t)  \)</span></td>
+	<td><code>\mathrm{M}_X(t)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  M(x)  \)</span></td>
+	<td><code>M(x)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  n(u)  \)</span></td>
+	<td><code>n(u)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  N  \)</span></td>
+	<td><code>N</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  N(t)  \)</span></td>
+	<td><code>N(t)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  p(j)  \)</span></td>
+	<td><code>p(j)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  p(x)  \)</span></td>
+	<td><code>p(x)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  p_k  \)</span></td>
+	<td><code>p_k</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \px{[x] + r}  \)</span></td>
+	<td><code>\px{[x] + r}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  p^{*n}(x)  \)</span></td>
+	<td><code>p^{*n}(x)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  _t\px{x}  \)</span></td>
+	<td><code>_t\px{x}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  _t\px{x}  \)</span></td>
+	<td><code>_t\px{x}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  _t\px[(\tau)]{x}  \)</span></td>
+	<td><code>_t\px[(\tau)]{x}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  _t\px[\prime (j)]{x}  \)</span></td>
+	<td><code>_t\px[\prime (j)]{x}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  _t\px{xy}  \)</span></td>
+	<td><code>_t\px{x}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  _t\px{\joint{xy}}  \)</span></td>
+	<td><code>_t\px{\joint{xy}}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  _t\px{xy}  \)</span></td>
+	<td><code>_t\px{x}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  _u\px{\joint{xy} + t}  \)</span></td>
+	<td><code>_u\px{\joint{xy} + t} </code></td>
+</tr>
+
+<tr>
+<td><span class="math">\( _t\px{\joint{x_1 x_2}\nthtop{k}{\joint{x_3}}}  \)</span></td>
+	<td><code>_t\px{\joint{x_1 x_2}\nthtop{k}{\joint{x_3}}}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  P(x)  \)</span></td>
+	<td><code>P(x)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  P(s,t)  \)</span></td>
+	<td><code>P(s,t)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  P_t  \)</span></td>
+	<td><code>P_t</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \actsymb{}{T}{P}{t}{}  \)</span></td>
+	<td><code>\actsymb{}{T}{P}{t}{}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  P^a  \)</span></td>
+	<td><code>P^a</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  P_x  \)</span></td>
+	<td><code>P_x</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  _j\Px{x}  \)</span></td>
+	<td><code>_j\Px{x}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  _*\Px{x}  \)</span></td>
+	<td><code>_*\Px{x}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \Px[A]{\endowxn}  \)</span></td>
+	<td><code>\Px[A]{\endowxn}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \Px{\endowxn}  \)</span></td>
+	<td><code>\Px{\endowxn}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \Px{\joint{xy}}  \)</span></td>
+	<td><code>\Px{\joint{xy}}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \Px{\termxn}  \)</span></td>
+	<td><code>\Px{\termxn}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \Px{\pureendowxn}  \)</span></td>
+	<td><code>\Px{\pureendowxn}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  P^{*n}(x)  \)</span></td>
+	<td><code>P^{*n}(x)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  _h\Px{x}  \)</span></td>
+	<td><code>_h\Px{x}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  _h\Px{\endowxn}  \)</span></td>
+	<td><code>_h\Px{\endowxn}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  (Pa)(x)  \)</span></td>
+	<td><code>(Pa)(x)</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  (Pa)_t  \)</span></td>
+	<td><code>(Pa)_t</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \premium{\bAx{\endowxn}}  \)</span></td>
+	<td><code>\premium{\bAx{\endowxn}}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \premium{_{n|}\dax{x}}  \)</span></td>
+	<td><code>\premium{_{n|}\dax{x}}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \premium{_{n|}\bax{x}}  \)</span></td>
+	<td><code>\premium{_{n|}\bax{x}}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \premium[(m)]{\bAx{x}}  \)</span></td>
+	<td><code>\premium[(m)]{\bAx{x}}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  \premium[\{m\}]{\bAx{x}}  \)</span></td>
+	<td><code>\premium[\{m\}]{\bAx{x}}</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  N  \)</span></td>
+	<td><code>N</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  N  \)</span></td>
+	<td><code>N</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  N  \)</span></td>
+	<td><code>N</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  N  \)</span></td>
+	<td><code>N</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  N  \)</span></td>
+	<td><code>N</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  N  \)</span></td>
+	<td><code>N</code></td>
+</tr>
+
+<tr>
+<td><span class="math">\(  N  \)</span></td>
+	<td><code>N</code></td>
+</tr>
 
 
 </tbody>
