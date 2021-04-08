@@ -4,6 +4,11 @@ actuarialsymbol for MathJax is a 3rd-party extension for MathJax, for typesettin
 
 ## Usage and Key features
 
+### Comprehensive life contingencies symbol list
+
+- [List of implemented symbols and code to reproduce them](https://madev34.github.io/actuarialsymbol-MathJax/)
+
+
 ### Shortcuts for life table, insurance and annuity symbols
 
     \lx{}
@@ -60,10 +65,6 @@ actuarialsymbol for MathJax is a 3rd-party extension for MathJax, for typesettin
     \iibottom{}
     \iiibottom{}
 
-
-### Comprehensive life contingencies symbol list
-
-- [List of implemented symbols and code to reproduce them](https://madev34.github.io/actuarialsymbol-MathJax/)
 
 
 ## Developpement
