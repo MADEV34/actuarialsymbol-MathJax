@@ -60,11 +60,6 @@ actuarialsymbol for MathJax is a 3rd-party extension for MathJax, for typesettin
     \iibottom{}
     \iiibottom{}
 
-    
-    \actsymb{}{}{}{}{}
-   
-    \Ax{}
-    \dax{x}
 
 ### Comprehensive life contingencies symbol list
 
