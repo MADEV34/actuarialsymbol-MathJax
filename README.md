@@ -69,6 +69,12 @@ actuarialsymbol for MathJax is a 3rd-party extension for MathJax, for typesettin
 ## Developpement
 This project is still in developpement. The extension is not currently implemented in MathJax V3.3.
 
+Upon completion, one could simply use \require{actuarialsymbol} in a Tex expression to load the extension. To add it to MathJax configuration bloc, one could simply add the following :
+
+    window.MathJax = {
+    loader: {load: ['[tex]/actuarialsymbol']},
+    tex: {packages: {'[+]': ['actuarialsymbol']}}
+    };
 
 
 **References :**
