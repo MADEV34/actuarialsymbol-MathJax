@@ -21,6 +21,15 @@ actuarialsymbol for MathJax is a 3rd-party extension for MathJax, for typesettin
     
     (...)
 
+###  Shortcuts for premiums, reserves and paid-up insurance
+    
+    \Px{}
+    \Vx{}
+    \Wx{}
+    \premium{}
+    \reserve{}
+    \paidup{}
+
 
 ### Shortcuts for auxiliary symbols
     
