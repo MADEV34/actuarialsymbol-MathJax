@@ -9,13 +9,32 @@ References :
 - [LaTex package home page](https://vigou3.gitlab.io/actuarialsymbol/)
 - [MathJax-third-party-extensions on GitHub](https://github.com/mathjax/MathJax-third-party-extensions)
 
-## Usage
+## Usage and Key features
+ 
+### Shortcuts for auxiliary symbols
+    
+    \angl{}
+    \endow{}{}
+    \term{}{}
+    \pureendow{}{}
+    
+### Shortcuts for precedence numbers
 
-    \actsymb{}{}{I\dax{x}}{}{(m)}
-    \Ax{\endowxn}
+    \itop{}
+    \iitop{}
+    \iiitop{}
+    
+    \ibottom{}
+    \iibottom{}
+    \iiibottom{}
+
+    
+    \actsymb{}{}{}{}{}
+   
+    \Ax{}
     \dax{x}
 
-## Manual
+## Comprehensive life contingencies symbol list
 
 - [List of implemented symbols and code to reproduce them](https://madev34.github.io/actuarialsymbol-MathJax/)
 
