@@ -34,7 +34,7 @@ References :
     \Ax{}
     \dax{x}
 
-## Comprehensive life contingencies symbol list
+### Comprehensive life contingencies symbol list
 
 - [List of implemented symbols and code to reproduce them](https://madev34.github.io/actuarialsymbol-MathJax/)
 
