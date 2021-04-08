@@ -3,7 +3,25 @@
 actuarialsymbol for MathJax is a 3rd-party extension for MathJax, for typesetting actuarial symbols.
 
 ## Usage and Key features
- 
+
+### Shortcuts for life table, insurance and annuity symbols
+
+    \lx{}
+    \Lx{}
+    \dx{}
+    \Dx{}
+    \px{}
+    \qx{}
+    \eringx{}
+    \Ax{}
+    \ax{}
+    \Ex{}
+    \sx{}
+    \aringx{}
+    
+    (...)
+
+
 ### Shortcuts for auxiliary symbols
     
     \angl{}
