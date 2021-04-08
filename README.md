@@ -1,4 +1,4 @@
-# actuarialsymbol for MathJax
+# actuarialsymbol for MathJax, 3.3
 
 actuarialsymbol for MathJax is a 3rd-party extension for MathJax, for typesetting actuarial symbols.
 
@@ -17,9 +17,8 @@ References :
 
 ## Manual
 
-Not yet available.
+- [List of implemented symbols and code to reproduce them](https://madev34.github.io/actuarialsymbol-MathJax/)
 
 
 ## Developpement
-
-This project is still in developpement.
+This project is still in developpement. The extension is not currently implemented in MathJax V3.3.
