@@ -11,6 +11,18 @@ actuarialsymbol for MathJax is a 3rd-party extension for MathJax, for typesettin
     \term{}{}
     \pureendow{}{}
     
+    
+### Shortcuts for varying benefit insurance and annuities
+
+    \IA{}
+    \DA{}
+    \Ia{}
+    \Da{}
+    \Is{}
+    \Ds{}
+    
+    (...)
+ 
 ### Shortcuts for precedence numbers
 
     \itop{}
